@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'homepage' %}
+
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
+
+{% block body %}
+
+	<div class="row">
+		<div class="col-12">
+
+			{% set values = [
+                    {
+                        userId: 1,
+                        id: 1,
+                        title: 'delectus aut autem',
+                        completed: false
+                    },
+                    {
+                        userId: 1,
+                        id: 2,
+                        title: 'quis ut nam facilis et officia qui',
+                        completed: false
+                    },
+                    {
+                        userId: 1,
+                        id: 3,
+                        title: 'fugiat veniam minus',
+                        completed: false
+                    },
+                    {
+                        userId: 1,
+                        id: 4,
+                        title: 'et porro tempora',
+                        completed: true
+                    },
+                    {
+                        userId: 1,
+                        id: 5,
+                        title: 'laboriosam mollitia et enim quasi adipisci quia provident illum',
+                        completed: false
+                    }
+                ]
+            %}
+
+			{# see: https://symfony.com/bundles/ux-react/current/index.html#usage #}
+			<div {{ react_component('MyComponent', { 'values': values } ) }}>
+				Loading...
+				<i class="fas fa-cog fa-spin fa-3x"></i>
+			</div>
+
+		</div>
+	</div>
+{% endblock %}
